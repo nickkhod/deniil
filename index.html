@@ -3,401 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>День Народження Дені</title>
+<title>Дені — Акварельний стиль</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Bangers&family=Nunito:wght@700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Nunito:wght@700;900&family=Caveat:wght@700&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --red:     #CC0000;
-    --blue:    #0033AA;
-    --blue2:   #0055DD;
-    --yellow:  #FFCC00;
-    --dark:    #07091A;
-    --mid:     #0D1535;
-    --white:   #FFFFFF;
-  }
-
   body {
-    background: var(--dark);
+    background: #E8DDD0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Nunito', sans-serif;
     padding: 20px;
-    overflow-x: hidden;
-  }
-
-  /* Web/stars background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(1px 1px at 8%  12%, rgba(255,255,255,0.55) 0%, transparent 100%),
-      radial-gradient(1px 1px at 22% 55%, rgba(255,255,255,0.45) 0%, transparent 100%),
-      radial-gradient(1px 1px at 38% 28%, rgba(255,255,255,0.65) 0%, transparent 100%),
-      radial-gradient(1px 1px at 55% 78%, rgba(255,255,255,0.40) 0%, transparent 100%),
-      radial-gradient(1px 1px at 72% 18%, rgba(255,255,255,0.55) 0%, transparent 100%),
-      radial-gradient(1px 1px at 83% 52%, rgba(255,255,255,0.50) 0%, transparent 100%),
-      radial-gradient(1px 1px at 92% 88%, rgba(255,255,255,0.65) 0%, transparent 100%),
-      radial-gradient(2px 2px at 48% 48%, rgba(204,0,0,0.25) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
+    font-family: 'Nunito', sans-serif;
   }
 
   .card {
-    position: relative;
-    z-index: 1;
     width: 100%;
-    max-width: 520px;
+    max-width: 420px;
+    background: #FBF7F0;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow:
-      0 0 50px rgba(204,0,0,0.45),
-      0 0 100px rgba(0,51,170,0.35),
-      0 0 0 3px var(--blue);
-    background: var(--dark);
+    box-shadow: 0 12px 50px rgba(0,0,0,0.18);
+    border: 3px solid #C8B8A2;
+    position: relative;
   }
 
-  /* ─── HERO BANNER ─── */
-  .hero-banner {
-    background: linear-gradient(160deg, var(--blue) 0%, #001880 45%, #5a0000 100%);
-    padding: 28px 24px 22px;
+  /* watercolor texture top */
+  .top-art {
+    background: linear-gradient(180deg, #DDEAF5 0%, #EAD8D0 60%, #FBF7F0 100%);
+    padding: 30px 20px 20px;
     text-align: center;
     position: relative;
-    border-bottom: 5px solid var(--red);
-  }
-
-  /* diagonal stripe overlay */
-  .hero-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -55deg,
-      transparent,
-      transparent 18px,
-      rgba(255,255,255,0.025) 18px,
-      rgba(255,255,255,0.025) 36px
-    );
-    pointer-events: none;
-  }
-
-  /* dot halftone */
-  .hero-banner::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 10px 10px;
-    pointer-events: none;
-  }
-
-  /* Superman S-shield SVG top-left */
-  .shield {
-    position: absolute;
-    top: 14px;
-    left: 18px;
-    z-index: 3;
-    opacity: 0.92;
-    animation: pulse 3s ease-in-out infinite;
-  }
-  .shield svg { width: 52px; height: 52px; }
-
-  /* POW badge top-right */
-  .pow {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    z-index: 3;
-    animation: wobble 4s ease-in-out infinite;
-  }
-  .pow svg { width: 62px; height: 62px; }
-
-  @keyframes pulse {
-    0%,100% { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(255,204,0,0.6)); }
-    50%      { transform: scale(1.06); filter: drop-shadow(0 0 14px rgba(255,204,0,0.9)); }
-  }
-  @keyframes wobble {
-    0%  { transform: rotate(-6deg) scale(1); }
-    50% { transform: rotate(6deg) scale(1.05); }
-    100%{ transform: rotate(-6deg) scale(1); }
-  }
-
-  /* Hero icons */
-  .heroes {
+    min-height: 280px;
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 14px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  /* city skyline watercolor */
+  .skyline {
+    position: absolute;
+    bottom: 30px;
+    left: 0; right: 0;
+    opacity: 0.18;
+    font-size: 80px;
+    letter-spacing: -4px;
+    line-height: 1;
+    color: #5B7FA6;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  /* hero character */
+  .hero-char {
+    font-size: 90px;
+    line-height: 1;
     position: relative;
     z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    animation: heroFloat 3s ease-in-out infinite;
+  }
+  @keyframes heroFloat {
+    0%,100% { transform: translateY(0) rotate(-3deg); }
+    50%      { transform: translateY(-10px) rotate(3deg); }
   }
 
-  .hero-icon {
-    width: 58px;
-    height: 58px;
+  /* stars scattered */
+  .stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    font-size: 14px;
+    opacity: 0.7;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: 0.4; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.3); }
+  }
+
+  /* wavy border */
+  .wavy-border {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30px;
+    background: #FBF7F0;
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  /* join label */
+  .join-label {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: #8B6E5A;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 4px;
+  }
+
+  /* SUPER title */
+  .super-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    position: relative;
+    z-index: 3;
+  }
+  .super-title .s { color: #C0392B; }
+  .super-title .u { color: #2471A3; }
+  .super-title .p { color: #C0392B; }
+  .super-title .e { color: #2471A3; }
+  .super-title .r { color: #C0392B; }
+
+  /* name line */
+  .name-line {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: #5B7FA6;
+    position: relative;
+    z-index: 3;
+    margin-top: 4px;
+    border-bottom: 2px dashed #C8B8A2;
+    padding-bottom: 2px;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  /* content */
+  .content {
+    padding: 20px 24px 28px;
+    background: #FBF7F0;
+  }
+
+  .party-label {
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: #8B6E5A;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .party-label::before,
+  .party-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #C8B8A2;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #DDD0C0;
+  }
+  .info-row:last-child { border-bottom: none; }
+
+  .info-icon {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    border: 3px solid var(--yellow);
-    box-shadow: 0 0 18px rgba(255,204,0,0.45);
-    animation: heroFloat 3s ease-in-out infinite;
-    background: rgba(0,0,0,0.45);
-  }
-  .hero-icon:nth-child(2) { animation-delay: 0.4s; border-color: var(--red); box-shadow: 0 0 18px rgba(204,0,0,0.5); }
-  .hero-icon:nth-child(3) { animation-delay: 0.8s; }
-  .hero-icon:nth-child(4) { animation-delay: 1.2s; border-color: var(--red); box-shadow: 0 0 18px rgba(204,0,0,0.5); }
-
-  @keyframes heroFloat {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-7px); }
+    font-size: 16px;
+    flex-shrink: 0;
+    border: 2px solid #C8B8A2;
+    background: #FFF;
   }
 
-  /* ── CLASSIC SERIF title ── */
-  .invite-label {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 12px;
-    letter-spacing: 5px;
-    color: var(--yellow);
-    text-transform: uppercase;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 6px;
-    font-weight: 900;
-  }
-
-  .name-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 80px;
-    line-height: 0.95;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--white);
-    text-shadow:
-      3px 3px 0 var(--red),
-      6px 6px 0 rgba(0,0,0,0.55);
-    position: relative;
-    z-index: 2;
-    letter-spacing: 2px;
-  }
-
-  .birthday-subtitle {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--yellow);
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.6);
-    position: relative;
-    z-index: 2;
-    margin-top: 6px;
-    text-transform: uppercase;
-  }
-
-  /* ─── RED STRIPE divider ─── */
-  .stripe-divider {
-    height: 0;
-    border: none;
-    border-top: 5px solid var(--red);
-    background: var(--red);
-    position: relative;
-  }
-
-  /* ─── CONTENT ─── */
-  .content {
-    background: var(--mid);
-    padding: 6px 26px 26px;
-  }
-
-  .tagline {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 900;
-    color: var(--white);
-    padding: 16px 0 18px;
-    line-height: 1.65;
-    border-bottom: 2px dashed rgba(255,204,0,0.18);
-  }
-  .tagline span { color: var(--yellow); }
-
-  /* Info grid */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 18px 0;
-  }
-
-  .info-block {
-    background: rgba(255,255,255,0.04);
-    border: 2px solid rgba(255,204,0,0.18);
-    border-radius: 14px;
-    padding: 14px 12px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .info-block:hover {
-    border-color: rgba(255,204,0,0.55);
-    background: rgba(255,255,255,0.06);
-  }
-  .info-block.wide { grid-column: 1 / -1; }
-
-  .info-emoji { font-size: 26px; flex-shrink: 0; }
-
-  .info-label {
+  .info-text-label {
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--yellow);
-    margin-bottom: 3px;
+    color: #B0906A;
+    margin-bottom: 2px;
   }
 
-  .info-value {
+  .info-text-value {
     font-size: 15px;
     font-weight: 900;
-    color: var(--white);
-    line-height: 1.35;
+    color: #3A3030;
+    line-height: 1.3;
   }
 
-  /* Fun box */
-  .fun-line {
-    background: linear-gradient(135deg, var(--red) 0%, #990000 100%);
+  .bottom-note {
+    margin-top: 18px;
+    background: linear-gradient(135deg, #EAD8D0, #DDEAF5);
     border-radius: 14px;
-    padding: 16px 18px;
+    padding: 14px 16px;
     text-align: center;
-    font-size: 14px;
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.65;
-    border: 2px solid rgba(255,255,255,0.12);
-  }
-  .fun-line .emoji-row {
-    font-size: 22px;
-    display: block;
-    margin-bottom: 6px;
-    letter-spacing: 4px;
-  }
-
-  /* Footer */
-  .footer {
-    background: linear-gradient(135deg, var(--blue) 0%, #001060 100%);
-    padding: 14px;
-    text-align: center;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 15px;
-    font-weight: 900;
-    font-style: italic;
-    letter-spacing: 3px;
-    color: var(--yellow);
-    border-top: 4px solid var(--yellow);
-  }
-
-  @media (max-width: 480px) {
-    .name-title { font-size: 62px; }
-    .hero-icon { width: 48px; height: 48px; font-size: 24px; }
-    .info-grid { grid-template-columns: 1fr; }
-    .info-block.wide { grid-column: auto; }
+    font-family: 'Caveat', cursive;
+    font-size: 17px;
+    color: #5B4A40;
+    line-height: 1.6;
+    border: 1.5px dashed #C8B8A2;
   }
 </style>
 </head>
 <body>
-
 <div class="card">
-
-  <!-- Hero Banner -->
-  <div class="hero-banner">
-
-    <!-- Superman S-Shield -->
-    <div class="shield">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- outer diamond -->
-        <polygon points="50,2 98,30 98,70 50,98 2,70 2,30" fill="#FFCC00" stroke="#CC0000" stroke-width="3"/>
-        <!-- inner red -->
-        <polygon points="50,10 90,33 90,67 50,90 10,67 10,33" fill="#CC0000"/>
-        <!-- S letter -->
-        <text x="50" y="67" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#FFCC00" font-weight="bold" font-style="italic">S</text>
-      </svg>
+  <div class="top-art">
+    <div class="stars">
+      <div class="star" style="top:10%;left:12%;animation-delay:0s">⭐</div>
+      <div class="star" style="top:20%;right:15%;animation-delay:0.5s">✦</div>
+      <div class="star" style="top:35%;left:8%;animation-delay:1s">★</div>
+      <div class="star" style="top:15%;left:50%;animation-delay:0.3s">⭐</div>
+      <div class="star" style="top:40%;right:10%;animation-delay:0.8s">✦</div>
+      <div class="star" style="top:60%;left:20%;animation-delay:1.2s">★</div>
+      <div class="star" style="top:55%;right:22%;animation-delay:0.6s">⭐</div>
     </div>
-
-    <!-- POW badge -->
-    <div class="pow">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,2 61,34 96,34 69,55 80,88 50,67 20,88 31,55 4,34 39,34" fill="#FFCC00" stroke="#CC0000" stroke-width="2.5"/>
-        <text x="50" y="60" text-anchor="middle" font-family="Bangers, cursive" font-size="17" fill="#0033AA" font-weight="bold">POW!</text>
-      </svg>
+    <div class="skyline">🏙🏙🏙🏙🏙</div>
+    <div class="hero-char">🦸‍♂️</div>
+    <div class="wavy-border"></div>
+    <div style="position:relative;z-index:3;text-align:center;padding-bottom:14px">
+      <div class="join-label">✦ Запрошуємо відсвяткувати ✦</div>
+      <div class="super-title">
+        <span class="s">С</span><span class="u">У</span><span class="p">П</span><span class="e">Е</span><span class="r">Р</span>
+      </div>
+      <div class="name-line">Дені</div>
     </div>
-
-    <div class="heroes">
-      <div class="hero-icon">🦸</div>
-      <div class="hero-icon">🕷️</div>
-      <div class="hero-icon">⚡</div>
-      <div class="hero-icon">🦇</div>
-    </div>
-
-    <div class="invite-label">— Супергеройське запрошення —</div>
-    <div class="name-title">ДЕНІ</div>
-    <div class="birthday-subtitle">Святкує День Народження!</div>
   </div>
 
-  <div class="stripe-divider"></div>
-
-  <!-- Content -->
   <div class="content">
+    <div class="party-label">🎉 Деталі свята 🎉</div>
 
-    <div class="tagline">
-      <span>🦸 Дені збирає команду</span><br>
-      найсміливіших друзів!
+    <div class="info-row">
+      <div class="info-icon">🗓</div>
+      <div>
+        <div class="info-text-label">Дата</div>
+        <div class="info-text-value">28 червня 2026 року</div>
+      </div>
     </div>
 
-    <div class="info-grid">
-
-      <div class="info-block">
-        <div class="info-emoji">🗓</div>
-        <div>
-          <div class="info-label">Дата</div>
-          <div class="info-value">28 червня<br>2026</div>
-        </div>
+    <div class="info-row">
+      <div class="info-icon">🕓</div>
+      <div>
+        <div class="info-text-label">Час</div>
+        <div class="info-text-value">16:00</div>
       </div>
-
-      <div class="info-block">
-        <div class="info-emoji">🕓</div>
-        <div>
-          <div class="info-label">Час</div>
-          <div class="info-value">16:00</div>
-        </div>
-      </div>
-
-      <div class="info-block wide">
-        <div class="info-emoji">📍</div>
-        <div>
-          <div class="info-label">Місце</div>
-          <div class="info-value">EPILAND Чабани<br>Одеське шосе, 8</div>
-        </div>
-      </div>
-
     </div>
 
-    <div class="fun-line">
-      <span class="emoji-row">🎂 🎉 🦸 🎈</span>
-      На тебе чекають<br>
-      <strong>супергеройські пригоди, ігри</strong><br>
-      та святковий торт!
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-text-label">Місце</div>
+        <div class="info-text-value">EPILAND Чабани<br>Одеське шосе, 8</div>
+      </div>
     </div>
 
+    <div class="bottom-note">
+      🎂 На тебе чекають супергеройські пригоди, ігри та святковий торт! 🎈
+    </div>
   </div>
-
-  <div class="footer">⚡ Герої не запізнюються! ⚡</div>
-
 </div>
-
 </body>
 </html>
